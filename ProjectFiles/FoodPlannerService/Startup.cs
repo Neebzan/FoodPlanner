@@ -1,5 +1,8 @@
 using FoodPlannerService.Models;
+using FoodPlannerService.Models.Contexts;
 using FoodPlannerService.Repositories;
+using FoodPlannerService.Repositories.Implementations;
+using FoodPlannerService.Repositories.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +35,10 @@ namespace FoodPlannerService
             services.AddMvc();
             services.AddScoped<IIngredientRepository, IngredientRepository>();
             services.AddDbContext<IngredientContext>(o => o.UseSqlite("Data source=ingredients.db"));
+            services.AddScoped<IRecipeRepository, RecipeRepository>();
+            services.AddDbContext<RecipeContext>(o => o.UseSqlite("Data source=recipes.db"));
+            services.AddScoped<IRecipeIngredientsRepository, RecipeIngredientsRepository>();
+            services.AddDbContext<RecipeIngredientsContext>(o => o.UseSqlite("data source=recipe_ingredients.db"));
             //services.AddControllers();
             services.AddSwaggerGen(sw => {
                 sw.SwaggerDoc("v1", new OpenApiInfo {

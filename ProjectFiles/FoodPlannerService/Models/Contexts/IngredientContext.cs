@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FoodPlannerService.Models {
+namespace FoodPlannerService.Models.Contexts {
     public class IngredientContext : DbContext {
         public IngredientContext(DbContextOptions<IngredientContext> options) : base(options) {
             Database.EnsureCreated();

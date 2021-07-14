@@ -1,11 +1,11 @@
 ﻿using FoodPlannerService.Models;
+using FoodPlannerService.Models.Contexts;
+using FoodPlannerService.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
-namespace FoodPlannerService.Repositories {
+namespace FoodPlannerService.Repositories.Implementations {
     public class RecipeRepository : IRecipeRepository {
         readonly RecipeContext _context = null;
 

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FoodPlannerService.Repositories {
+namespace FoodPlannerService.Repositories.Interfaces {
     public interface IIngredientRepository {
         Task<IEnumerable<Ingredient>> Get();
         Task<Ingredient> Get(int id);
